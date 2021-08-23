@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -10,26 +12,107 @@ html {
 }
 
 body {
-  position: relative;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  text-transform: uppercase;
   height: 100vh;
+  background: linear-gradient(135deg, #ac2436, #6c338d);
 }
 
 .dashboard {
   display: flex;
-  width: 65%;
-  height: 85vh;
-  position: absolute;
+  width: 1000px;
+  height: 57vh;
+  /*position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);*/
+  margin: 22vh auto;
+  position: relative;
 }
 
 .player1 {
-  background-color: red;
+  background-color: rgb(221, 188, 206);
   width: 50%;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 .player2 {
-  background-color: green;
+  background-color: rgb(194, 134, 165);
   width: 50%;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.player1 .player-header {
+  font-weight: bold;
+}
+
+.player-header {
+  font-size: 4rem;
+  margin-top: 20%;
+  margin-bottom: 5%;
+}
+
+.player-score {
+  font-size: 8rem;
+  margin-bottom: 25%;
+  color: rgb(207, 45, 107);
+}
+
+.current {
+  background-color: rgb(207, 45, 107);
+  width: 200px;
+  margin: 0 auto;
+  padding: 25px;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.current-header {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.current-score {
+  font-size: 3rem;
+}
+
+/* Buttons */
+.button {
+  font-size: 1.8rem;
+  font-family: inherit;
+  text-transform: inherit;
+  background-color: rgba(225, 255, 255, 0.7);
+  border: none;
+  padding: 7px 25px 10px;
+  border: none;
+  border-radius: 50px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+
+.button:active {
+  background-color: rgba(175, 11, 152, 0.8);
+}
+
+.smiley {
+  font-size: 2.5rem;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.new-game {
+  top: 45px;
+}
+
+.roll-dice {
+  bottom: 155px;
+}
+
+.hold {
+  bottom: 85px;
 }
