@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@350&display=swap");
 
 * {
   margin: 0;
@@ -12,47 +12,55 @@ html {
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Rubik", sans-serif;
   text-align: center;
   text-transform: uppercase;
   height: 100vh;
-  background: linear-gradient(135deg, #ac2436, #6c338d);
+  background: linear-gradient(135deg, #e62b44e8, #511f6ef5);
 }
 
+/*Layouts*/
 .dashboard {
   display: flex;
   width: 1000px;
-  height: 57vh;
-  /*position: absolute;
+  position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);*/
-  margin: 22vh auto;
-  position: relative;
+  transform: translate(-50%, -50%);
+}
+
+.player1,
+.player2 {
+  width: 50%;
 }
 
 .player1 {
-  background-color: rgb(221, 188, 206);
-  width: 50%;
+  background-color: rgba(240, 214, 228, 0.884);
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 }
 
 .player2 {
-  background-color: rgb(194, 134, 165);
-  width: 50%;
+  background-color: rgb(194, 136, 166);
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
+}
+
+/* Maina */
+.player-header {
+  font-size: 4rem;
+  margin-top: 20%;
+  margin-bottom: 5%;
 }
 
 .player1 .player-header {
   font-weight: bold;
 }
 
-.player-header {
-  font-size: 4rem;
-  margin-top: 20%;
-  margin-bottom: 5%;
+.smiley {
+  font-size: 2.5rem;
+  margin-right: 10px;
+  display: inline-block;
 }
 
 .player-score {
@@ -64,7 +72,7 @@ body {
 .current {
   background-color: rgb(207, 45, 107);
   width: 200px;
-  margin: 0 auto;
+  margin: 0 auto 85px;
   padding: 25px;
   color: #fff;
   border-radius: 10px;
@@ -79,30 +87,20 @@ body {
   font-size: 3rem;
 }
 
-/* Buttons */
+/* Game Buttons */
 .button {
   font-size: 1.8rem;
   font-family: inherit;
   text-transform: inherit;
   background-color: rgba(225, 255, 255, 0.7);
   border: none;
-  padding: 7px 25px 10px;
+  padding: 5px 25px 10px;
   border: none;
   border-radius: 50px;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   cursor: pointer;
-}
-
-.button:active {
-  background-color: rgba(175, 11, 152, 0.8);
-}
-
-.smiley {
-  font-size: 2.5rem;
-  margin-right: 10px;
-  display: inline-block;
 }
 
 .new-game {
@@ -115,4 +113,33 @@ body {
 
 .hold {
   bottom: 85px;
+}
+
+/* Active Buttons */
+.button:active {
+  box-shadow: 0 10px 5px rgba(0, 0, 0, 0.05);
+}
+
+.new-game:active {
+  top: 47px;
+}
+
+.roll-dice:active {
+  bottom: 153px;
+}
+
+.hold:active {
+  bottom: 83px;
+}
+
+/*Dice Image*/
+.dice {
+  /*width: 100px;
+  height: 100px;*/
+  position: absolute;
+  z-index: 4;
+  left: 50%;
+  top: 30%;
+  transform: translateX(-50%);
+  /*box-shadow: 5px 10px 5px rgba(0, 0, 0, 0.05);*/
 }
