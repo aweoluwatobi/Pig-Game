@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@350&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@350&display=swap');
 
 * {
   margin: 0;
@@ -12,8 +12,8 @@ html {
 }
 
 body {
-  font-family: "Rubik", sans-serif;
-  text-align: center;
+  font-family: 'Rubik', sans-serif;
+  /*text-align: center;*/
   text-transform: uppercase;
   height: 100vh;
   background: linear-gradient(135deg, #e62b44e8, #511f6ef5);
@@ -27,11 +27,19 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.3);
 }
 
 .player1,
 .player2 {
+  display: flex;
+  flex-direction: column;
   width: 50%;
+  height: 600px;
+  align-items: center;
+  justify-content: space-around;
+  padding: 50px 0;
 }
 
 .player1 {
@@ -46,11 +54,9 @@ body {
   border-bottom-right-radius: 10px;
 }
 
-/* Maina */
+/* Main */
 .player-header {
   font-size: 4rem;
-  margin-top: 20%;
-  margin-bottom: 5%;
 }
 
 .player1 .player-header {
@@ -65,30 +71,35 @@ body {
 
 .player-score {
   font-size: 8rem;
-  margin-bottom: 25%;
   color: rgb(207, 45, 107);
+  margin-top: -70px;
 }
 
 .current {
   background-color: rgb(207, 45, 107);
-  width: 200px;
-  margin: 0 auto 85px;
-  padding: 25px;
-  color: #fff;
+  width: 40%;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px 0 15px;
   border-radius: 10px;
+  margin-top: 50px;
 }
 
 .current-header {
   font-size: 1.8rem;
-  margin-bottom: 15px;
+  color: #d7d7d7;
 }
 
 .current-score {
   font-size: 3rem;
+  color: #fff;
 }
 
 /* Game Buttons */
-.button {
+button {
   font-size: 1.8rem;
   font-family: inherit;
   text-transform: inherit;
@@ -108,38 +119,36 @@ body {
 }
 
 .roll-dice {
-  bottom: 155px;
+  bottom: 160px;
 }
 
 .hold {
-  bottom: 85px;
+  bottom: 90px;
 }
 
 /* Active Buttons */
 .button:active {
-  box-shadow: 0 10px 5px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 5px rgba(95, 88, 88, 0.1);
+  transition: 0.5s all;
 }
 
 .new-game:active {
-  top: 47px;
+  top: 50px;
 }
 
 .roll-dice:active {
-  bottom: 153px;
+  bottom: 150px;
 }
 
 .hold:active {
-  bottom: 83px;
+  bottom: 80px;
 }
 
 /*Dice Image*/
 .dice {
-  /*width: 100px;
-  height: 100px;*/
   position: absolute;
-  z-index: 4;
   left: 50%;
   top: 30%;
   transform: translateX(-50%);
-  /*box-shadow: 5px 10px 5px rgba(0, 0, 0, 0.05);*/
+  box-shadow: 15px 20px 30px rgba(0, 0, 0, 0.1);
 }
