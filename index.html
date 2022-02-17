@@ -8,33 +8,33 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="dashboard">
-      <div class="player1">
-        <p class="player-header">Player 1</p>
-        <p class="player-score">0</p>
+    <main>
+      <section class=" player player-1 player-active">
+        <p class="player-name" id="name-1">Player 1</p>
+        <p class="player-score" id="score-1">0</p>
         <div class="current">
-          <p class="current-header">current</p>
-          <p class="current-score">0</p>
+          <p class="current-label">current</p>
+          <p class="current-score" id="current-1">0</p>
         </div>
-      </div>
+      </section>
 
-      <div class="player2">
-        <p class="player-header">Player 2</p>
-        <p class="player-score">0</p>
+      <section class="player player-2">
+        <p class="player-name" id="name-2">Player 2</p>
+        <p class="player-score" id="score-2">0</p>
 
         <div class="current">
-          <p class="current-header">Current</p>
-          <p class="current-score">0</p>
+          <p class="current-label">Current</p>
+          <p class="current-score" id="current-2">0</p>
         </div>
-      </div>
-      <button class="new-game">
+      </section>
+      <button class="btn btn-new">
         <span class="smiley">🔄</span> New Game
       </button>
-      <img class="dice"></img>
-      <button class="roll-dice">
+      <img src="images/dice-1.png" class="dice hidden" alt="playing dice"></img>
+      <button class="btn btn-roll">
         <span class="smiley">🎲</span> Roll Dice
       </button>
-      <button class="hold"><span class="smiley">📥</span> Hold</button>
+      <button class="btn btn-hold"><span class="smiley">📥</span> Hold</button>
     </div>
     <script src="script.js"></script>
   </body>
