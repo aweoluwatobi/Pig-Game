@@ -1,7 +1,7 @@
 'use strict';
 
 function random() {
-  return Math.floor(Math.random() * 6) + 1;
+  return Math.floor(Math.random() * (6 - 1 + 1) + 1);
 }
 
 const newGameBtn = document.querySelector('.btn-new');
@@ -10,22 +10,34 @@ const rollDiceBtn = document.querySelector('.btn-roll');
 const holdBtn = document.querySelector('.btn-hold');
 const player1 = document.querySelector('.player-1');
 const player2 = document.querySelector('.player-2');
+const currentScore1 = document.getElementById('current-1');
+const currentScore2 = document.getElementById('current-2');
 let playerScore = 0;
 let currentScore = 0;
+let activePlayer = 1;
 
 // switch to next player when dice roll becomes one or hold button is pressed.
 rollDiceBtn.addEventListener('click', function () {
-  const randomNumber = random();
-  diceImg.src = 'images/dice-' + randomNumber + '.png';
+  const dice = random();
+  diceImg.src = `images/dice-${dice}.png`;
   diceImg.classList.remove('hidden');
-  currentScore += randomNumber;
-  document.querySelector('.current-score').textContent = currentScore;
 
-  if (randomNumber === 1) {
+  if (dice === 1) {
     currentScore = 0;
-    document.querySelector('.current-score').textContent = currentScore;
-    player1.classList.remove('player-active');
-    player2.classList.add('player-active');
+    document.getElementById(`current-${activePlayer}`).textContent =
+      currentScore;
+    activePlayer = activePlayer ? 2 : 1;
+    console.log(activePlayer);
+
+    //currentScore1.textContent = currentScore;
+
+    player1.classList.toggle('player-active');
+    player2.classList.toggle('player-active');
+  } else {
+    currentScore += dice;
+
+    document.getElementById(`current-${activePlayer}`).textContent =
+      currentScore;
   }
 });
 
