@@ -22,32 +22,30 @@ rollDiceBtn.addEventListener('click', function () {
   diceImg.src = `images/dice-${dice}.png`;
   diceImg.classList.remove('hidden');
 
-  if (dice === 1) {
-    currentScore = 0;
-    document.getElementById(`current-${activePlayer}`).textContent =
-      currentScore;
-    activePlayer = activePlayer ? 2 : 1;
-    console.log(activePlayer);
-
-    //currentScore1.textContent = currentScore;
-
-    player1.classList.toggle('player-active');
-    player2.classList.toggle('player-active');
-  } else {
+  
+  if (dice !== 1) {
     currentScore += dice;
 
     document.getElementById(`current-${activePlayer}`).textContent =
       currentScore;
+  } else {
+    currentScore = 0;
+    document.getElementById(`current-${activePlayer}`).textContent =
+      currentScore;
+    activePlayer = (activePlayer === 1) ? 2 : 1;
+    player1.classList.toggle('player-active');
+    player2.classList.toggle('player-active');
   }
 });
 
 holdBtn.addEventListener('click', function () {
   playerScore += currentScore;
-  document.querySelector('.player-score').textContent = playerScore;
+  document.getElementById(`score-${activePlayer}`).textContent = playerScore;
   currentScore = 0;
-  document.querySelector('.current-score').textContent = currentScore;
-  player1.classList.remove('player-active');
-  player2.classList.add('player-active');
+  document.getElementById(`current-${activePlayer}`).textContent = currentScore;
+  activePlayer = (activePlayer === 1) ? 2 : 1;
+  player1.classList.toggle('player-active');
+  player2.classList.toggle('player-active');
 });
 
 newGameBtn.addEventListener('click', function () {
