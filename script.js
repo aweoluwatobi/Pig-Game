@@ -28,13 +28,15 @@ function diceRollFunc() {
 
   if (dice === 1) {
     currentScore = 0;
-    document.getElementById(`current-${activePlayer}`).textContent = currentScore;
+    document.getElementById(`current-${activePlayer}`).textContent =
+      currentScore;
     activePlayer = activePlayer === 1 ? 2 : 1;
     player1.classList.toggle('player-active');
     player2.classList.toggle('player-active');
   } else {
     currentScore += dice;
-    document.getElementById(`current-${activePlayer}`).textContent = currentScore;
+    document.getElementById(`current-${activePlayer}`).textContent =
+      currentScore;
   }
 }
 
@@ -43,25 +45,30 @@ rollDiceBtn.addEventListener('click', diceRollFunc);
 holdBtn.addEventListener('click', function () {
   if (activePlayer === 1) {
     playerScore[0] += currentScore;
-    document.getElementById(`score-${activePlayer}`).textContent = playerScore[0];
+    document.getElementById(`score-${activePlayer}`).textContent =
+      playerScore[0];
     currentScore = 0;
-    document.getElementById(`current-${activePlayer}`).textContent = currentScore;
+    document.getElementById(`current-${activePlayer}`).textContent =
+      currentScore;
     player1Score += playerScore[0];
   } else {
     playerScore[1] += currentScore;
-    document.getElementById(`score-${activePlayer}`).textContent = playerScore[1];
+    document.getElementById(`score-${activePlayer}`).textContent =
+      playerScore[1];
     currentScore = 0;
-    document.getElementById(`current-${activePlayer}`).textContent = currentScore;
+    document.getElementById(`current-${activePlayer}`).textContent =
+      currentScore;
     player2Score += playerScore[1];
   }
 
   if (playerScore[`${activePlayer}` - 1] >= 100) {
     diceImg.classList.add('hidden');
     rollDiceBtn.removeEventListener('click', diceRollFunc);
-    document.querySelector(`.player-${activePlayer}`).style.backgroundColor = '#383838';
-    document.getElementById(`name-${activePlayer}`).style.color = 'rgb(207, 45, 107)';
-    
-    
+    document.querySelector(`.player-${activePlayer}`).style.backgroundColor =
+      '#383838';
+    document.getElementById(`name-${activePlayer}`).style.color =
+      'rgb(207, 45, 107)';
+
     TODO; // SET TEXT COLOR AND OTHERS WHEN SCORE IS GREATER THAN OR EQUAL TO 100
   } else {
     activePlayer = activePlayer === 1 ? 2 : 1;
@@ -81,7 +88,7 @@ newGameBtn.addEventListener('click', function () {
   player1.classList.add('player-active');
   player2.classList.remove('player-active');
   document.querySelector(`.player-${activePlayer}`).style.backgroundColor = '';
-  document.getElementById(`name-${activePlayer}`).style.color ='';
+  document.getElementById(`name-${activePlayer}`).style.color = '';
   activePlayer = 1;
   rollDiceBtn.addEventListener('click', diceRollFunc);
 });
